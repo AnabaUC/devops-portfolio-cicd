@@ -34,10 +34,9 @@ jobs:
           test -f src/index.html
           test -f src/style.css
           test -f src/script.js
-
           echo "Application files verified."
 
-          - name: Build application
+      - name: Build application
         run: npm run build
 
       - name: Verify build
@@ -45,5 +44,4 @@ jobs:
           test -f dist/index.html
           test -f dist/style.css
           test -f dist/script.js
-
           echo "Build verified successfully."
