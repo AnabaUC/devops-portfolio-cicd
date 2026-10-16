@@ -36,3 +36,14 @@ jobs:
           test -f src/script.js
 
           echo "Application files verified."
+
+          - name: Build application
+        run: npm run build
+
+      - name: Verify build
+        run: |
+          test -f dist/index.html
+          test -f dist/style.css
+          test -f dist/script.js
+
+          echo "Build verified successfully."
