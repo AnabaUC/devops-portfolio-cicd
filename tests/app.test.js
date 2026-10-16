@@ -1,3 +1,3 @@
 test("application test is working", () => {
-    expect(true).toBe(true);
+    expect(true).toBe(false);
 });
