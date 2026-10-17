@@ -14,13 +14,12 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-        APP_ENV: test
+      APP_ENV: test
 
     steps:
-            - name: Display environment
-              run: echo "Running CI in $APP_ENV environment" 
+      - name: Display environment
+        run: echo "Running CI in $APP_ENV environment"
 
-    steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
