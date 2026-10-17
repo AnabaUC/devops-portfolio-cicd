@@ -51,3 +51,20 @@ jobs:
           test -f dist/style.css
           test -f dist/script.js
           echo "Build verified successfully."
+
+      - name: Verify secret exists
+        env:
+          DEMO_SECRET: ${{ secrets.DEVOPS_DEMO_SECRET }}
+        run: |
+          if [ -z "$DEMO_SECRET" ]; then
+            echo "Secret is missing"
+            exit 1
+          fi
+
+          echo "Secret is configured successfully."
+
+      - name: Build Docker image
+        run: docker build -t devops-portfolio:${{ github.sha }} .
+
+      - name: Test Docker image
+        run: docker run --rm devops-portfolio:${{ github.sha }} nginx -t
