@@ -62,3 +62,9 @@ jobs:
           fi
 
           echo "Secret is configured successfully."
+
+      - name: Build Docker image
+        run: docker build -t devops-portfolio:${{ github.sha }} .
+
+      - name: Test Docker image
+        run: docker run --rm devops-portfolio:${{ github.sha }} nginx -t
