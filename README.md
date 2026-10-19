@@ -64,3 +64,13 @@ rather than being committed to the repository.
 ## Project Status
 
 In active development as part of my DevOps learning portfolio.
+
+## Docker
+
+The application can be packaged and served using Docker.
+
+### Build the application
+
+```bash
+npm test
+npm run build
